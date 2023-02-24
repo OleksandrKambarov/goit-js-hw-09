@@ -49,3 +49,18 @@ window.addEventListener('keydown', e => {
 function onBtnStart() {
   timerId = setInterval(startTimer, 1000);
 }
+
+function currentDifferenceDate(selectedDates) {
+  const currentDate = Date.now();
+
+  if (selectedDates < currentDate) {
+    btnStartRef.setAttribute('disabled', true);
+    return Notify.failure('Please choose a date in the future');
+  }
+
+  timeDifference = selectedDates.getTime() - currentDate;
+  formatDate = convertMs(timeDifference);
+
+  renderDate(formatDate);
+  btnStartRef.removeAttribute('disabled');
+}
