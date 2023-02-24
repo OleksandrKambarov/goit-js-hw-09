@@ -45,3 +45,7 @@ window.addEventListener('keydown', e => {
     daysRef.textContent = '00';
   }
 });
+
+function onBtnStart() {
+  timerId = setInterval(startTimer, 1000);
+}
