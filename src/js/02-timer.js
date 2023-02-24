@@ -64,3 +64,18 @@ function currentDifferenceDate(selectedDates) {
   renderDate(formatDate);
   btnStartRef.removeAttribute('disabled');
 }
+
+function startTimer() {
+  btnStartRef.setAttribute('disabled', true);
+  imputDatePickerRef.setAttribute('disabled', true);
+
+  timeDifference -= 1000;
+
+  if (secondsRef.textContent <= 0 && minutesRef.textContent <= 0) {
+    Notify.success('Time end');
+    clearInterval(timerId);
+  } else {
+    formatDate = convertMs(timeDifference);
+    renderDate(formatDate);
+  }
+}
