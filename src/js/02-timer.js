@@ -27,3 +27,5 @@ const options = {
 };
 
 btnStartRef.setAttribute('disabled', true);
+
+flatpickr(imputDatePickerRef, options);
