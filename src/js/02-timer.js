@@ -29,3 +29,5 @@ const options = {
 btnStartRef.setAttribute('disabled', true);
 
 flatpickr(imputDatePickerRef, options);
+
+btnStartRef.addEventListener('click', onBtnStart);
