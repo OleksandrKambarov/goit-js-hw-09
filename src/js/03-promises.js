@@ -21,10 +21,18 @@ function onSubmitForm(e) {
 }
 
 function createPromise(position, delay) {
+  const obj = { position, delay };
   const shouldResolve = Math.random() > 0.3;
-  if (shouldResolve) {
-    // Fulfill
-  } else {
-    // Reject
-  }
+
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (shouldResolve) {
+        // Fulfill
+        resolve(obj);
+      } else {
+        // Reject
+        reject(obj);
+      }
+    }, delay);
+  });
 }
